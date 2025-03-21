@@ -7,5 +7,15 @@ use Illuminate\Http\Request;
 
 class CategorieController extends Controller
 {
-    //
+    public function liste(){
+
+        return view('admin.categories.list');
+
+    }
+
+    public function details(){
+
+        return view("admin.categories.show");
+
+    }
 }
