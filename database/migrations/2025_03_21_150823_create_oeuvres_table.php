@@ -13,7 +13,25 @@ return new class extends Migration
     {
         Schema::create('oeuvres', function (Blueprint $table) {
             $table->id();
+            $table->string('titre',255);
+            $table->string('photo',255);
+            $table->string('artiste')->nullable();
+            $table->date('annee de fabrication')->nullable();
+            $table->date('date acquisition')->nullable();
+            $table->string('prix estime',20)->nullable();
+            $table->foreignId('categorie_id')->nullable()
+            ->constrained('categories');
+            $table->longText('description');
+            $table->longText('tags')->nullable();
+            $table->text('slug');
             $table->timestamps();
+
+
+
+
+
+
+
         });
     }
 
